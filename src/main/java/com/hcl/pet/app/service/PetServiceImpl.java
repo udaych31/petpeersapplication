@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.hcl.pet.app.dto.MyPetsResponse;
@@ -61,6 +62,18 @@ public class PetServiceImpl implements PetService {
 		}
 		
 		return response;
+	}
+	public ResponseEntity<List<Pet>> listOfPet() {
+		// TODO Auto-generated method stub
+		List<Pet> petResult=petRepository.findAll();
+		return ResponseEntity.ok().body(petResult);
+				
+	}
+	@Override
+	public ResponseEntity addPet(Pet pet) {
+		// TODO Auto-generated method stub
+		Pet petResult=petRepository.save(pet);
+		return ResponseEntity.ok().build();
 	}
 
 }

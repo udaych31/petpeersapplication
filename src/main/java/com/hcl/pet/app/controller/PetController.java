@@ -1,6 +1,9 @@
 package com.hcl.pet.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hcl.pet.app.dto.MyPetsResponse;
 import com.hcl.pet.app.dto.PetBuyRequest;
 import com.hcl.pet.app.dto.PetBuyResponse;
+import com.hcl.pet.app.entity.Pet;
 import com.hcl.pet.app.service.PetServiceImpl;
 
 @RestController
@@ -30,6 +34,20 @@ public class PetController {
 	@PostMapping("/buypet")
 	public PetBuyResponse buyPet(@RequestBody PetBuyRequest request) {
 		return petServiceImpl.buyPet(request);
+	}
+	@GetMapping("/listofpets")
+	public ResponseEntity<List<Pet>> listOfPets()
+	{
+		ResponseEntity<List<Pet>> petListResult=petServiceImpl.listOfPet();
+		return petListResult;
+		
+	}
+	@PostMapping("/addpet")
+	public ResponseEntity listOfPets(@RequestBody Pet pet)
+	{
+		ResponseEntity response=petServiceImpl.addPet(pet);
+		return response;
+		
 	}
 	
 	
