@@ -27,8 +27,11 @@ public class PetServiceImpl implements PetService {
 			response=new PetBuyResponse();
 			Pet pet = petRepository.findByPetId(request.getPetId());
 			pet.setUserId(request.getUserId());
-			petRepository.save(pet);
-			response.setMessage("Pet purchased to your cart successfully ...!");
+			Pet petresponse = petRepository.save(pet);
+			if(petresponse!=null) {
+				response.setMessage("Pet purchased to your cart successfully ...!");
+			}
+			
 			
 		} catch (Exception e) {
 			
