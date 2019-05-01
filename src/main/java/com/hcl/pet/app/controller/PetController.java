@@ -63,4 +63,11 @@ public class PetController {
 		return "welcome to petpeers";
 	}
 	
+	@GetMapping("/say")
+	public String sayHi(@RequestParam("uname") String uname) {
+		return "welcome "+uname;
+	}
+	
+	
+	
 }
