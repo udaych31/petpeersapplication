@@ -46,13 +46,21 @@ public class PetController {
 	public ResponseEntity listOfPets(@RequestBody Pet pet)
 	{
 		ResponseEntity response=petServiceImpl.addPet(pet);
+		System.out.println("addpet");
 		return response;
+		
 		
 	}
 	
 	@GetMapping("/get")
 	public String getmessage() {
 		return "welcome to petpeers1";
+	}
+	
+	
+	@GetMapping("/msg")
+	public String getmsg() {
+		return "welcome to petpeers";
 	}
 	
 }
