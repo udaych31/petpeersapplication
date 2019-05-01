@@ -50,6 +50,9 @@ public class PetController {
 		
 	}
 	
-	
+	@GetMapping("/get")
+	public String getmessage() {
+		return "welcome to petpeers1";
+	}
 	
 }
