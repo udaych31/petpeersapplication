@@ -21,4 +21,6 @@ public interface PetService {
 	public ResponseEntity<List<Pet>> listOfPet();
 
 	public ResponseEntity addPet(Pet pet);
+
+	public ResponseEntity addPetTwo(Pet pet);
 }

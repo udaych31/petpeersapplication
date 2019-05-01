@@ -76,4 +76,11 @@ public class PetServiceImpl implements PetService {
 		return ResponseEntity.ok().build();
 	}
 
+	@Override
+	public ResponseEntity addPetTwo(Pet pet) {
+		// TODO Auto-generated method stub
+		Pet petResult=petRepository.save(pet);
+		return ResponseEntity.ok().build();
+	}
+
 }
