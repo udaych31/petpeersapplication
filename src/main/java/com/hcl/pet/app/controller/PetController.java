@@ -68,11 +68,19 @@ public class PetController {
 	public String sayHello(@RequestParam("name") String name) {
 		return "welcome "+name;
 	}
-
-
 	
 	@GetMapping("/say")
 	public String sayHi(@RequestParam("uname") String uname) {
+		return "welcome "+uname;
+	}
+
+	@GetMapping("/say1")
+	public String sayHi1(@RequestParam("uname") String uname) {
+		return "welcome 1"+uname;
+	}
+
+	@GetMapping("/sayhello")
+	public String sayHihello(@RequestParam("uname") String uname) {
 		return "welcome "+uname;
 	}
 	

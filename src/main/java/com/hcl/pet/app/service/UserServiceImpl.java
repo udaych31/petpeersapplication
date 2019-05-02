@@ -63,4 +63,27 @@ public class UserServiceImpl implements UserService{
 		return response;
 	}
 
+	@Override
+	public ResponseDTO loginUser1(String username,String password) {
+		
+		List<User> users=userRepository.findAll();
+		response=new ResponseDTO();
+		  
+		for(User user:users) {
+			
+			if(user.getUserName().equals(username) && user.getPassword().equals(password)) {
+				
+				response.setValue(true);
+				  
+			}
+			
+			else {
+				response.setValue(false);
+			}
+			
+		}
+			
+		return response;
+	}
+
 }
