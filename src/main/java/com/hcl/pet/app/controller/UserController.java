@@ -51,5 +51,14 @@ public class UserController {
 		
 		
 	}
+	
+	
+	@GetMapping("/hi")
+	public String getMsg() {
+		return "hello";
+	}
+	
+	
+	
 
 }

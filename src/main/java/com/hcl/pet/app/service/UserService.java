@@ -9,5 +9,6 @@ public interface UserService {
 	
 	public boolean registerUser(UserDTO userdto);
 	public ResponseDTO loginUser(String username,String password);
+	public boolean registerUser1(UserDTO userdto);
 	
 }
