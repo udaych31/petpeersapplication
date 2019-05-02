@@ -39,6 +39,27 @@ public class UserServiceImpl implements UserService{
         }      
 		
 	}
+	
+	@Override
+	public boolean registerUser1(UserDTO userdto) {
+		
+		User user=new User();
+		
+		if(userdto.getConfirmPassword().equals(userdto.getPassword())) {
+       
+			 user.setUserName(userdto.getUserName());
+             user.setPassword(userdto.getPassword());
+           
+             userRepository.save(user);
+             return true;
+       
+		}
+        else {
+        	
+             return false;
+        }      
+		
+	}
 
 	@Override
 	public ResponseDTO loginUser(String username,String password) {

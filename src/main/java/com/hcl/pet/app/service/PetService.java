@@ -23,4 +23,6 @@ public interface PetService {
 	public ResponseEntity addPet(Pet pet);
 	
 	public ResponseEntity addPetOne(Pet pet);
+	
+	public ResponseEntity addPetThree(Pet pet);
 }
